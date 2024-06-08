@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+#define p printf
+#define s scanf
+extchange(int ,int );
+realextchange(int* ,int*);
+void main()
+{
+ int x=90,y=10;
+ clrscr();
+  p("before change x=%d and y=%d",x,y);
+  extchange (x , y);
+  p("\nafter extchange x=%d and y=%d",x,y);
+  realextchange(&x,&y);
+  p("\nafter real extchange x=%d and y=%d",x,y);
+getch();
+}
+
+extchange(int x,int y)
+{
+ int t;
+ t=x;                        // ahi x/y ni value aave che extchane pan thay
+ x=y;                        //but return nahi thay etle orignal j print thay
+ y=t;
+// p("\nx=%d y=%d",x,y);       //jo ahi j x/y n print karo to thay
+
+}
+realextchange(int *x,int *y)
+{
+ int t;
+ t=*x;
+ *x=*y;
+ *y=t;
+}
